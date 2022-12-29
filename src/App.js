@@ -6,6 +6,8 @@ import {
 import Home from "./pages/home/Home/Home";
 import List from "./pages/home/list/List";
 import Match from "./pages/home/match/Match";
+import DataFetching  from "./data";
+
 
 function App() {
   return (
@@ -14,8 +16,11 @@ function App() {
         <Route path="/" element={<Home />}></Route>
         <Route path="/matches" element={<List />}></Route>
         <Route path="/matches/:id" element={<Match />}></Route>
+        
       </Routes>
+      
     </BrowserRouter>
+   
   );
 }
 
