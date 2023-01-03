@@ -53,11 +53,13 @@ function DataFetching(){
     )
 }
 function MatchFetching(){
-    const id=5
+    var url = window.location.pathname;
+    var id = url.substring(url.lastIndexOf('/') + 1);
     let navigate=useNavigate()
-    const [fixtures,setFixtures]=useState([])
+    const [fixtures,setFixtures]=useState(5)
+    console.log(fixtures)
     useEffect(()=>{
-        axios.get(`https://bug-diggerz-shop.vercel.app/api/records/${id}`)
+        axios.get(`https://bug-diggerz-shop.vercel.app/api/record/${id}`)
         .then(res=>{
             console.log(res)
             setFixtures(res.data)
@@ -65,10 +67,13 @@ function MatchFetching(){
         .catch(err=>{
             console.log(err)
         })
-    },[])
+    },fixtures)
     return(
         <div className='match'>
         <Navbar />
+        <h1>{fixtures.homeTeam}vs{fixtures.awayTeam}</h1>
+        
+        <h2>ticket available:</h2>
         <img src={fixtures.image}></img>
         <div className="matchContainer">
           <div className="matchWrapper">
