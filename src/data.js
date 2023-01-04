@@ -8,10 +8,10 @@ import { faLocation, faTicket } from '@fortawesome/free-solid-svg-icons'
 import { faEye } from '@fortawesome/free-regular-svg-icons'
 import SearchList from "./search";
 import { faSearch } from "@fortawesome/free-solid-svg-icons"
-import {Header} from "./components/header/Header";
+import Header from "./components/header/Header";
 import {GetResult} from "./components/header/Header"
 
- let result=Header.document.getElementById("matchSearch")
+// let result=document.getElementById()
 const DataFetching=()=>{
   // const m=GetResult()
     let navigate=useNavigate()
@@ -28,7 +28,6 @@ const DataFetching=()=>{
         })
     },[])
     function handleSearch(){
-        console.log(result)
         // result= document.getElementById("matchSearch").value;
     //   console.log(result)
         //  return(
@@ -77,7 +76,7 @@ const DataFetching=()=>{
         // </div>
         
         <div>  
-          <SearchList matches={matches.filter((matches)=>matches.homeTeam=="Qatar"||matches.awayTeam=="Qatar")}/>
+          <SearchList matches={matches}/>
         </div>
         
     )
