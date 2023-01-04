@@ -1,0 +1,340 @@
+.payment{
+
+    height: 1200px;
+    width:100%;
+    background-image: url('https://i.imgur.com/Dv46jxW.png');
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    scroll-behavior: smooth;
+    position: fixed;
+
+
+    }
+  .creditly-wrapper.blue-theme {
+    background-color: rgba(228, 3, 71, 0.8);
+    border-color: #9d001f;
+    border-radius: 10px;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+  
+    width: 350px;
+    min-height: 216px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.428571429;
+    color: white;
+    margin-top: 300px;
+    margin-left: 700px;
+    position: relative;
+    background-image: -webkit-linear-gradient(#6A61A6,#5492AD 85%,#41BDAE);
+    background-image: -moz-linear-gradient(#6A61A6,#5492AD 85%,#41BDAE);
+    background-image: -ms-linear-gradient(#6A61A6,#5492AD 85%,#41BDAE);
+    background-image: -o-linear-gradient(#6A61A6,#5492AD 85%,#41BDAE);
+    background-image: -webkit-linear-gradient(#6A61A6,#5492AD 85%,#41BDAE);
+    background-image: -moz-linear-gradient(#6A61A6,#5492AD 85%,#41BDAE);
+    background-image: -ms-linear-gradient(#6A61A6,#5492AD 85%,#41BDAE);
+    background-image: -o-linear-gradient(#6A61A6,#5492AD 85%,#41BDAE);
+    background-image: linear-gradient(#6A61A6,#5492AD 85%,#41BDAE);
+  }
+  
+  .creditly-wrapper.blue-theme .credit-card-wrapper {
+    padding: 40px 30px;
+  }
+  
+  .creditly-wrapper.blue-theme .credit-card-wrapper .controls {
+    padding-left: 1px;
+    padding-right: 10px;
+  }
+  
+  /*
+   * Bootstrap stuff
+   */
+  
+  .creditly-wrapper input.form-control.has-error {
+    outline: none;
+    border-color: #ff7076;
+    border-top-color: #ff5c61;
+    -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.2),0 1px 0 rgba(255,255,255,0),0 0 4px 0 rgba(255,0,0,0.5);
+    -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,0.2),0 1px 0 rgba(255,255,255,0),0 0 4px 0 rgba(255,0,0,0.5);
+    -ms-box-shadow: inset 0 1px 2px rgba(0,0,0,0.2),0 1px 0 rgba(255,255,255,0),0 0 4px 0 rgba(255,0,0,0.5);
+    -o-box-shadow: inset 0 1px 2px rgba(0,0,0,0.2),0 1px 0 rgba(255,255,255,0),0 0 4px 0 rgba(255,0,0,0.5);
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.2),0 1px 0 rgba(255,255,255,0),0 0 4px 0 rgba(255,0,0,0.5);
+  }
+  
+  .creditly-wrapper .form-control {
+    display: flex;
+    width: 100%;
+    height: 34px;
+    padding: 6px 15px;
+    font-size: 14px;
+    line-height: 1.428571429;
+    color: #555;
+    vertical-align: middle;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+    -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    margin-left: -10px;
+  }
+  
+  .creditly-wrapper .form-control:focus {
+    border-color: #66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(102,175,233,0.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(102,175,233,0.6);
+  }
+  
+  .creditly-wrapper label {
+    display: inline-block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .creditly-wrapper input:focus::-webkit-input-placeholder {
+      color: #ccc;
+  }
+  
+  .creditly-wrapper input:focus:-moz-placeholder {
+      color: #ccc;
+  }
+  
+  .creditly-wrapper input:focus::-moz-placeholder {
+      color: #ccc;
+  }
+  
+  .creditly-wrapper input:focus:-ms-input-placeholder {
+      color: #ccc;
+  }
+  
+  .creditly-wrapper .col-sm-8 {
+    width: 66.6666666666666%;
+  }
+  
+  .creditly-wrapper .col-sm-4 {
+    width: 33.3333333333333%;
+  }
+  
+  .creditly-wrapper .col-sm-8,
+  .creditly-wrapper .col-sm-4 {
+    float: left;
+    position: relative;
+    display: block;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  
+  .creditly-wrapper .form-group {
+    width: 100%;
+    display: table;
+  }
+  
+  .creditly-wrapper .first-row {
+    margin-bottom: 20px;
+  }
+  
+  .creditly-wrapper .card-type {
+    margin-top: 10px;
+    float: right;
+  }
+  
+  /**
+   * Button CSS
+   */
+  
+  .creditly-blue-theme-submit {
+    overflow: hidden;
+    display: inline-block;
+    visibility: visible!important;
+    background-image: -webkit-linear-gradient(#28a0e5,#015e94);
+    background-image: -moz-linear-gradient(#28a0e5,#015e94);
+    background-image: -ms-linear-gradient(#28a0e5,#015e94);
+    background-image: -o-linear-gradient(#28a0e5,#015e94);
+    background-image: -webkit-linear-gradient(#28a0e5,#015e94);
+    background-image: -moz-linear-gradient(#28a0e5,#015e94);
+    background-image: -ms-linear-gradient(#28a0e5,#015e94);
+    background-image: -o-linear-gradient(#28a0e5,#015e94);
+    background-image: linear-gradient(#28a0e5,#015e94);
+    -webkit-font-smoothing: antialiased;
+    border: 0;
+    padding: 1px;
+    text-decoration: none;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.2);
+    -moz-box-shadow: 0 1px 0 rgba(0,0,0,0.2);
+    -ms-box-shadow: 0 1px 0 rgba(0,0,0,0.2);
+    -o-box-shadow: 0 1px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 1px 0 rgba(0,0,0,0.2);
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    cursor: pointer;
+  }
+  
+  .creditly-blue-theme-submit span {
+    display: block;
+    position: relative;
+    padding: 0 12px;
+    height: 30px;
+    line-height: 30px;
+    background: #1275ff;
+    background-image: -webkit-linear-gradient(#7dc5ee,#008cdd 85%,#30a2e4);
+    background-image: -moz-linear-gradient(#7dc5ee,#008cdd 85%,#30a2e4);
+    background-image: -ms-linear-gradient(#7dc5ee,#008cdd 85%,#30a2e4);
+    background-image: -o-linear-gradient(#7dc5ee,#008cdd 85%,#30a2e4);
+    background-image: -webkit-linear-gradient(#7dc5ee,#008cdd 85%,#30a2e4);
+    background-image: -moz-linear-gradient(#7dc5ee,#008cdd 85%,#30a2e4);
+    background-image: -ms-linear-gradient(#7dc5ee,#008cdd 85%,#30a2e4);
+    background-image: -o-linear-gradient(#7dc5ee,#008cdd 85%,#30a2e4);
+    background-image: linear-gradient(#7dc5ee,#008cdd 85%,#30a2e4);
+    font-size: 14px;
+    color: #fff;
+    font-weight: bold;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+    -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,0.25);
+    -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,0.25);
+    -ms-box-shadow: inset 0 1px 0 rgba(255,255,255,0.25);
+    -o-box-shadow: inset 0 1px 0 rgba(255,255,255,0.25);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.25);
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+  }
+  
+  .creditly-gray-theme-submit {
+    background: #2FB4E9;
+    border: 0;
+    color: #FFF;
+    display: block;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 12px 40px;
+    text-shadow: 0px 2px 0px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.2s ease;
+    -webkit-transition: all 0.2s ease;
+  }
+  
+  .creditly-gray-theme-submit:hover {
+    background: #5dc5ee;
+  }
+  
+  .creditly-gray-theme-submit:active {
+    background: #169acf;
+    border: 0;
+    outline: 0;
+  }
+  
+  .creditly-gray-theme-submit:focus {
+    background: #5dc5ee;
+  }
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Koulen&family=Lato&family=Nunito&family=Playfair+Display:ital@1&family=Prata&family=Raleway:ital,wght@1,100&family=Roboto&family=Roboto+Condensed&family=Teko&display=swap'); 
+
+.Checkout{
+font-family: Roboto, sans-serif;
+font-weight: 0;
+font-size: 14px;
+color: #fff;
+background-color: #0066CC;
+padding: 10px 15px;
+border: solid #0066cc 1px;
+box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
+border-radius: 44px;
+transition : 1270ms;
+transform: translateY(0);
+display: flex;
+flex-direction: row;
+align-items: center;
+cursor: pointer;
+margin-top: 10px;
+margin-left: 875px;
+}
+
+.Checkout:hover{
+transition : 1270ms;
+padding: 10px 27px;
+transform : translateY(20px);
+background-color: #fff;
+color: #0066cc;
+border: solid 1px #0066cc;
+}
+
+.Cancel{
+    font-family: Roboto, sans-serif;
+    font-weight: 0;
+    font-size: 14px;
+    color: #fff;
+    background-color: #0066CC;
+    padding: 10px 15px;
+    border: solid #0066CC 1px;
+    box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
+    border-radius: 44px;
+    transition : 1270ms;
+    transform: translateY(0);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+    margin-left: 790px;
+    margin-top: -38px;
+    }
+    
+    .Cancel:hover{
+    transition : 1270ms;
+    padding: 10px 27px;
+    transform : translateY(20px);
+    background-color: #fff;
+    color: #0066cc;
+    border: solid 1px #0066cc;
+    }
+
+    .Captcha{
+        font-family: Roboto, sans-serif;
+        font-weight: 0;
+        font-size: 12px;
+        color: #fff;
+        background-color: #ff8400;
+        padding: 10px 15px;
+        border: solid #ff0000 1px;
+        box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
+        border-radius: 44px;
+        transition : 1270ms;
+        transform: translateY(0);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        cursor: pointer;
+        margin-left: 785px;
+        margin-top: 25px;
+        }
+        
+        .Captcha:hover{
+        transition : 1270ms;
+        padding: 10px 27px;
+        transform : translateY(-25px);
+        background-color: #fff;
+        color: #0066cc;
+        border: solid 1px #0066cc;
+        }
+
+  

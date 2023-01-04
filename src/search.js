@@ -10,7 +10,7 @@ import { faEye } from '@fortawesome/free-regular-svg-icons'
 import { faSearch } from "@fortawesome/free-solid-svg-icons"
 
 
-const SearchList=(props,handleSearch)=>{
+const SearchList=(props)=>{
     let navigate=useNavigate() 
     const matches=props.matches
     return(

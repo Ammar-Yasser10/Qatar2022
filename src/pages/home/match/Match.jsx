@@ -8,6 +8,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLocation, faTicket } from '@fortawesome/free-solid-svg-icons'
 import { faEye } from '@fortawesome/free-regular-svg-icons'
 import { MatchFetching } from '../../../data'
+import {useNavigate} from "react-router-dom";
+
 
 
 // function calculate(value) {
@@ -26,13 +28,14 @@ import { MatchFetching } from '../../../data'
 //   total.innerHTML = total;
 // }
 const Match = () => {
+  let navigate=useNavigate()
   var url = window.location.pathname;
   var uid = url.substring(url.lastIndexOf('/') + 1);
   const [prices,setPrice]=useState(0)
   const [fixtures,setFixtures]=useState(5)
     console.log(fixtures)
     useEffect(()=>{
-        axios.get(`https://bug-diggerz-shop.vercel.app/api/record/${uid}`)
+        axios.get(`https://bug-diggerz-shop.vercel.app/api/records/${uid}`)
         .then(res=>{
             console.log(res)
             setFixtures(res.data)
@@ -89,7 +92,7 @@ const Match = () => {
 
           </div>
           <div className="procceed">
-            <button> Proceed to checkout</button>
+            <button onClick={()=>navigate(`/payment`)}> Proceed to checkout</button>
 
           </div>
 

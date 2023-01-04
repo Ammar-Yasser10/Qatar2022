@@ -11,7 +11,7 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons"
 import Header from "./components/header/Header";
 import {GetResult} from "./components/header/Header"
 
-// let result=document.getElementById()
+
 const DataFetching=()=>{
   // const m=GetResult()
     let navigate=useNavigate()
@@ -28,25 +28,25 @@ const DataFetching=()=>{
         })
     },[])
     function handleSearch(){
-        // result= document.getElementById("matchSearch").value;
-    //   console.log(result)
-        //  return(
-        //   <div>  
-        //   <div className="header">
-        //   <div className="headerSearch">
-        //             <div className="headerSearchItem">
-        //                 <FontAwesomeIcon className="headerIcon" icon={faSearch} />
-        //                 <input type="text"
-        //                     placeholder="Search Matches" className="headerSearchInput" id="matchSearch" />
-        //                 <div className="headerSearchItem">
-        //                     <button className="headerSearchButton" onClick={()=>handleSearch()}>Search</button>
-        //                 </div>
-        //             </div>
-        //         </div> 
-        //   </div>
-        //   <SearchList matches={matches.filter((matches)=>matches.homeTeam==result||matches.awayTeam==result)}/>
-        // </div>
-        //  )
+      let result= document.getElementById("matchSearch").value;
+      console.log(result)
+         return(
+          <div>  
+          <div className="header">
+          <div className="headerSearch">
+                    <div className="headerSearchItem">
+                        <FontAwesomeIcon className="headerIcon" icon={faSearch} />
+                        <input type="text"
+                            placeholder="Search Matches" className="headerSearchInput" id="matchSearch" />
+                        <div className="headerSearchItem">
+                            <button className="headerSearchButton" onClick={()=>handleSearch()}>Search</button>
+                        </div>
+                    </div>
+                </div> 
+          </div>
+          <SearchList matches={matches.filter((matches)=>matches.homeTeam==result||matches.awayTeam==result)}/>
+        </div>
+         )
        }
     return(
         // <div>
