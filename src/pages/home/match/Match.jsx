@@ -9,6 +9,7 @@ import { faLocation, faTicket } from '@fortawesome/free-solid-svg-icons'
 import { faEye } from '@fortawesome/free-regular-svg-icons'
 import { MatchFetching } from '../../../data'
 import {useNavigate} from "react-router-dom";
+import {Trial} from '../../Payment/Payment';
 
 
 
@@ -33,6 +34,8 @@ const Match = () => {
   var uid = url.substring(url.lastIndexOf('/') + 1);
   const [prices,setPrice]=useState(0)
   const [fixtures,setFixtures]=useState(5)
+  const [categories,setCategories]=useState(0)
+  const [tno,setTno]=useState(1)
     console.log(fixtures)
     useEffect(()=>{
         axios.get(`https://bug-diggerz-shop.vercel.app/api/records/${uid}`)
@@ -44,7 +47,41 @@ const Match = () => {
             console.log(err)
         })
     },fixtures)
-
+function handlePending(){
+  var price=prices
+  if(Number(document.getElementById("Category").value )==1){
+    price=75
+  }
+  if(Number(document.getElementById("Category").value )==2){
+    price=125
+  }
+  if(Number(document.getElementById("Category").value )==3){
+    price=195
+  }
+  axios.post('https://bug-diggerz-reservation.vercel.app/api/reservation',{
+    "email": "desoukya@gmail.com",
+    "matchNumber": fixtures.matchNumber,
+    "tickets": {
+      "category":Number(document.getElementById("Category").value ),
+      "quantity":Number(document.getElementById("Tickets").value),
+      "price":price
+    },
+    "card": {
+      "number": "4242424242424242",
+      "expirationMonth": 11,
+      "expirationYear": 2024,
+      "cvc": "000"   
+    }
+  })
+  .then(function (response) {
+    console.log(response);
+    console.log("SUCCESS")
+    navigate(`/payment/${fixtures.matchNumber}`)
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
+}
   return (
 //<MatchFetching/>
     // <div className='match'>
@@ -54,6 +91,7 @@ const Match = () => {
     //     <div className="matchWrapper">
     //       <h1 className="matchTitle"></h1>
     <div className='match'>
+      
       <Navbar />
       {/* <h1>{fixtures.homeTeam}vs{fixtures.awayTeam}</h1>
         
@@ -92,7 +130,7 @@ const Match = () => {
 
           </div>
           <div className="procceed">
-            <button onClick={()=>navigate(`/payment`)}> Proceed to checkout</button>
+            <button onClick={()=>handlePending()}> Proceed to checkout</button>
 
           </div>
 
@@ -106,6 +144,7 @@ const Match = () => {
 
         </div>
       </div>
+      <Trial mno={fixtures.matchNumber} amount={prices} cno={categories} tq={tno}/>
     </div>
 
 
@@ -114,7 +153,9 @@ const Match = () => {
     var price = 0;
     var category = document.getElementById("Category").value;
     var tickets = document.getElementById("Tickets").value;
-    console.log(category)
+    setCategories(Number(category))
+    setTno(Number(tickets))
+   // console.log(category)
     //var total = document.getElementByName("total-price");
     if (category == 1) {
       price=75
@@ -123,10 +164,12 @@ const Match = () => {
     } else if (category == 3) {
       price=195
     }
-    console.log(price)
+    //console.log(price)
     setPrice(price*tickets)
     //var total = price * tickets;
     //total.innerHTML = total;
+    var result=price*tickets
+    return result
   }
 
 }
