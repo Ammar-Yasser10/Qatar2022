@@ -8,6 +8,7 @@ import List from "./pages/home/list/List";
 import Match from "./pages/home/match/Match";
 import DataFetching  from "./data";
 import {Payment,Trial} from "./pages/Payment/Payment";
+import Analytics from "./pages/analytics/Analytics";
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route path="/matches" element={<List />}></Route>
         <Route path="/matches/:id" element={<Match />}></Route>
         <Route path="/payment/:id" element={<Payment/>}></Route>
+        <Route path="/analytics" element={<Analytics/>}></Route>
       </Routes>
       
     </BrowserRouter>

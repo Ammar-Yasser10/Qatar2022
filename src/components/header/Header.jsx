@@ -6,7 +6,9 @@ import { DataFetching } from "../../data"
 import Home from "../../pages/home/Home/Home"
 import SearchList from "../../search"
 import Navbar from "../navbar/Navbar"
+import {useNavigate} from "react-router-dom";
 const Header = () => {
+    let navigate=useNavigate()
     return (
         <div className="header">
             <div className="headerContainer">
@@ -16,7 +18,7 @@ const Header = () => {
                 <p className="headerdesc">
                     Enjoy discounted prices when you book the tickets through our official website
                 </p>
-                <button className="headerBtn">Analytics</button>
+                <button className="headerBtn" onClick={()=>navigate('/analytics')}>Analytics</button>
                 <div className="headerSearch">
                     <div className="headerSearchItem">
                         <FontAwesomeIcon className="headerIcon" icon={faSearch} />

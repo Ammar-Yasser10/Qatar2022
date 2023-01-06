@@ -1,0 +1,60 @@
+.Wrapper{
+    width: 1024px;
+    
+  }
+  
+  
+  .name{
+    position: relative;
+    color :rgb(4, 77, 77) ;
+    margin-left: 750px;
+ 
+  }
+  .piechart{
+    position: relative;
+     margin-left: 800px;
+     margin-top: 470px;
+     width:100%;
+     
+  }
+  .barchart{
+    position: relative;
+
+    margin-left: 175px;
+    margin-top: -880px;
+  }
+
+  .canceled{
+    font-size: 30px;
+    color : #dec672 ;
+    position: absolute;
+    margin-left: 200px;
+    margin-top: 860px;
+
+
+  }
+  .reserved{
+    font-size: 30px;
+    color :#8f8e8e;
+    position: absolute;
+    margin-left: 350px;
+    margin-top: 860px;
+  }
+  .pending{
+    font-size: 30px;
+    color :#8d0a30;
+    position: absolute;
+    margin-left:500px;
+    margin-top: 860px;
+    margin-bottom: 100px;
+
+  }
+  .number{
+    font-size: 30px;
+    color :#8d0a30;
+    position: absolute;
+    margin-left: -250px;
+  
+    margin-top: 40px;
+
+  }
