@@ -230,6 +230,12 @@
     border-radius: 5px;
   }
   
+  .procceed:hover{
+    transition : 1270ms;
+    background-color: #ffb050;
+    position: absolute;
+    transform : translateY(10px);
+    }
   
   .Price {
     color: white;

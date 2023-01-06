@@ -18,6 +18,16 @@ tq=Number(props.tq)
 
 const Payment = () => {
 //const x=props.props
+var price=0
+if(amount==75||amount==150){
+  price=75
+}
+if(amount==125||amount==250){
+  price=125
+}
+if(amount==195||amount==390){
+  price=195
+}
 var url = window.location.pathname;
 var uid = url.substring(url.lastIndexOf('/') + 1);
 const [tickets,setTickets]=useState({});
@@ -34,43 +44,43 @@ useEffect(()=>{
 
     let navigate=useNavigate()
   function handleCancel(){
-    // axios.post('https://bug-diggerz-reservation.vercel.app/api/reservation/cancel',{
-    //     "email": "desoukya@gmail.com",
-    //     "matchNumber": tickets.matchNumber,
-    //     "tickets": {
-    //       "category":Number(tickets.category),
-    //       "quantity":Number(tickets.quantity),
-    //       "price": tickets.price
-    //     },
-    //     "card": {
-    //       "number": "4242424242424242",
-    //       "expirationMonth": 11,
-    //       "expirationYear": 2024,
-    //       "cvc": "000"   
-    //     }
-    //   })
-    //   .then(function (response) {
-    //     console.log(response);
-    //     console.log("SUCCESS")
-    //     navigate("/")
-    //   })
-    //   .catch(function (error) {
-    //     console.log(error);
-    //   });
+    axios.post('https://bug-diggerz-reservation.vercel.app/api/reservation/cancel',{
+        "email": "desoukya@gmail.com",
+        "matchNumber":mno,
+        "tickets": {
+          "category":cno,
+          "quantity":tq,
+          "price": price
+        },
+        "card": {
+          "number": "0000000000000000",
+          "expirationMonth": 11,
+          "expirationYear": 2000,
+          "cvc": "000"   
+        }
+      })
+      .then(function (response) {
+        console.log(response);
+        console.log("SUCCESS")
+        navigate("/")
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   }
   function handleCheckout(){
   axios.post('https://bug-diggerz-reservation.vercel.app/api/reservation/reserve',{
-        "email": "desoukya@gmail.com",
-        "matchNumber": tickets.matchNumber,
+        "email":document.getElementById('email').value,
+        "matchNumber":mno,
         "tickets": {
-          "category":Number(tickets.category),
-          "quantity":Number(tickets.quantity),
-          "price": tickets.price
+          "category":cno,
+          "quantity":tq,
+          "price":price
         },
         "card": {
           "number":document.getElementById('cno').value,
-          "expirationMonth": 11,
-          "expirationYear": 2024,
+          "expirationMonth": Number(document.getElementById('expmo').value),
+          "expirationYear": Number(document.getElementById('expyr').value),
           "cvc":document.getElementById('cvcno').value   
         }
       })
@@ -93,8 +103,9 @@ useEffect(()=>{
   <div class="credit-card-wrapper">
     <div class="first-row form-group">
       <div class="col-sm-8 controls">
-        <label class="control-label">{amount}</label>
+        <label class="control-label">Card Number</label>
         <input class="number credit-card-number form-control"
+          maxLength="16"
           type="text" name="number" id='cno'
           pattern="\d*"
           inputmode="numeric" autocomplete="cc-number" autocompletetype="cc-number" x-autocompletetype="cc-number"
@@ -104,6 +115,7 @@ useEffect(()=>{
       <div class="col-sm-4 controls">
         <label class="control-label">CVC</label>
         <input class="security-code form-control"
+          maxLength="3"
           inputmode="numeric"
           pattern="\d*"
           id='cvcno'
@@ -121,10 +133,25 @@ useEffect(()=>{
              </input>
       </div>
       <div class="col-sm-4 controls">
-        <label class="control-label">Expiration</label>
+        <label class="control-label">Exp Month</label>
         <input class="expiration-month-and-year form-control"
-          type="text" name="expiration-month-and-year"
-          placeholder="MM / YY">
+          type="text" id='expmo' name="expiration-month" maxLength="2"
+          placeholder="MM">
+             </input>
+      </div>
+       <div class="col-sm-4 controls">
+        <label class="control-label">Exp Year</label>
+        <input class="expiration-month-and-year form-control"
+          type="text" id='expyr' name="expiration-year" maxLength="4"
+          placeholder="YYYY">
+             </input>
+      </div>
+      <div class="col-sm-5 controls">
+        <label class="control-label">Email</label>
+        <input class="expiration-month-and-year form-control"
+          id='email'
+          type="text" name="expiration-year"
+          placeholder="moussa@gmail.com">
              </input>
       </div>
     </div>
@@ -133,7 +160,7 @@ useEffect(()=>{
   </div>
 </section>
 
-<button class="Captcha" type="submit">Prove You Are Not A ROBOT</button>
+
 <button class="Checkout" type="submit" onClick={()=>handleCheckout()}>Checkout</button>
 <button class="Cancel" type="submit" onClick={()=>handleCancel()}>Cancel</button>
                

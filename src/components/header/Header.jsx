@@ -16,7 +16,7 @@ const Header = () => {
                 <p className="headerdesc">
                     Enjoy discounted prices when you book the tickets through our official website
                 </p>
-                <button className="headerBtn">Reserve Your Ticket</button>
+                <button className="headerBtn">Analytics</button>
                 <div className="headerSearch">
                     <div className="headerSearchItem">
                         <FontAwesomeIcon className="headerIcon" icon={faSearch} />
