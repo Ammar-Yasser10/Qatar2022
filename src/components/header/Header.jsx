@@ -19,16 +19,7 @@ const Header = () => {
                     Enjoy discounted prices when you book the tickets through our official website
                 </p>
                 <button className="headerBtn" onClick={()=>navigate('/analytics')}>Analytics</button>
-                <div className="headerSearch">
-                    <div className="headerSearchItem">
-                        <FontAwesomeIcon className="headerIcon" icon={faSearch} />
-                        <input type="text"
-                            placeholder="Search Matches" className="headerSearchInput" id="matchSearch" />
-                        <div className="headerSearchItem">
-                            <button className="headerSearchButton" onClick={()=>GetResult()}>Search</button>
-                        </div>
-                    </div>
-                </div>
+
             </div>
         </div>
 

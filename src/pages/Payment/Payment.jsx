@@ -31,6 +31,22 @@ const Payment = () => {
 			cambiarCaptchaValido(true);
 		}
   }
+  const submit = (e) => {
+		e.preventDefault();
+
+		// Validamos los inputs del formulario
+		// Si son correctos ya podemos enviar el fomulario, actualizar la Interfaz, etc.
+
+		if(captcha.current.getValue()){
+			console.log('user is not a robot');
+			cambiarUsuarioValido(true);
+			cambiarCaptchaValido(true);
+		} else {
+			console.log('Please accept the captcha');
+			cambiarUsuarioValido(false);
+			cambiarCaptchaValido(false);
+		}
+	}
 //const x=props.props
 var price=0
 if(amount==75||amount==150){
@@ -84,7 +100,7 @@ useEffect(()=>{
   }
   function handleCheckout(){
   axios.post('https://bug-diggerz-reservation.vercel.app/api/reservation/reserve',{
-        "email":document.getElementById('email').value,
+        "email":document.getElementById('email').value ,
         "matchNumber":mno,
         "tickets": {
           "category":cno,
@@ -147,21 +163,21 @@ useEffect(()=>{
               <div class="col-sm-4 controls">
                 <label class="control-label">Exp Month</label>
                 <input class="expiration-month-and-year form-control"
-                  type="text" name="expiration-month" maxLength="2"
+                  type="text" id='expmo' name="expiration-month" maxLength="2"
                   placeholder="MM">
                 </input>
               </div>
               <div class="col-sm-4 controls">
                 <label class="control-label">Exp Year</label>
                 <input class="expiration-month-and-year form-control"
-                  type="text" name="expiration-year" maxLength="4"
+                  type="text" id='expyr' name="expiration-year" maxLength="4"
                   placeholder="YYYY">
                 </input>
               </div>
               <div class="col-sm-5 controls">
                 <label class="control-label">Email</label>
                 <input class="expiration-month-and-year form-control"
-                  type="text" name="expiration-year"
+                  type="text" id='email' name="expiration-year"
                   placeholder="moussa@gmail.com">
                 </input>
               </div>
@@ -169,17 +185,26 @@ useEffect(()=>{
             <div class="card-type">
             </div>
           </div>
+        
         </section>
+        <div className="contenedor"> 
+        <form className="form" action=" " onSubmit={submit}>
+        <button class="Checkout" type="submit"id="checkout" onClick={() => handleCheckout()}>Checkout</button>
+        <button class="Cancel" type="submit" onClick={() => handleCancel()}>Cancel</button>
         <div className="recaptcha">
           <ReCAPTCHA
             ref={captcha}
             sitekey="6LcL-qAjAAAAAMQ_dWF1s-kIPcWwhCLtAe2mt9-I"
             onChange={onChange}
             data-callback={enableBtn}
+            
           />
+         </div>
+         {captchaValido === false && <div className="error-captcha">Por favor acepta el captcha</div>}
+						
+        </form>
         </div>
-        <button class="Checkout" type="submit" disabled="disabled" id="checkout" onClick={() => handleCheckout()}>Checkout</button>
-        <button class="Cancel" type="submit" onClick={() => handleCancel()}>Cancel</button>
+       
 
 
 

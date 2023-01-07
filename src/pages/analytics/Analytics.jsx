@@ -542,15 +542,19 @@ const dataofmatches = [
 const colors = scaleOrdinal(schemeCategory10).range();
 const COLORS = ['#8f8e8e', '#dec672',' #8d0a30'];
 return (
-<div className="Wrapper" style ={{ textAlign: "center" }}>
+    <div>
+
+    
+    <div className="analyticss">
+<div className="Wrapper">
     
     <h1 className ="name">Tickets Analytics</h1>
-    <div className ="ttt">
+    {/* <div className ="ttt">
     <p className ="canceled">canceled</p>
     <p className ="reserved">reserved</p>
     <p className ="pending">pending</p>
-    </div>
-    <p className ="number">Tickets sold</p>
+    </div> */}
+    <p className ="tickets">Tickets sold</p>
     <div className="piechart">
     <PieChart width={270} height={450}>
     <Pie
@@ -569,10 +573,10 @@ return (
     ))}
     </Pie>
     
-</PieChart>
-</div>
-<div className ="barchart">
-<BarChart
+    </PieChart>
+    </div>
+    <div className ="barchart">
+    <BarChart
     width={1500}
     height={450}
     data={dataofmatches}
@@ -582,7 +586,7 @@ return (
     left: 20,
     bottom: 5
     }}
->
+    >
     <CartesianGrid strokeDasharray="3 3" />
     <XAxis dataKey="name" />
     <YAxis />
@@ -596,10 +600,17 @@ return (
         <Cell key={`cell-${index}`} fill={colors[index % 20]} />
     ))}
     </Bar>
-</BarChart>
-</div>
+    </BarChart>
+    <ul className="list">
+       <li className="canceled">canceled</li>
+       <li className="reserved">reserved</li>
+       <li className="pending">pending</li> 
+    </ul>
+    </div>
     
 </div>
+    </div>
+    </div>
 
 );
 };
